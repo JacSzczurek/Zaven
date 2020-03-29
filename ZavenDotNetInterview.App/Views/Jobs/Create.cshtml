@@ -1,0 +1,27 @@
+﻿@model ZavenDotNetInterview.Core.Models.CreateJobRequest
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    //@Html.ValidationSummary()
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Name)
+            @Html.TextBoxFor(x => x.Name)
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.DoAfter)
+            @Html.TextBoxFor(x => x.DoAfter, new { type = "date" })
+            @Html.ValidationMessageFor(x => x.DoAfter)
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+}
+
